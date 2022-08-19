@@ -9,4 +9,6 @@ export interface MenuContextInterface {
   setWorkspaceList?: Dispatch<SetStateAction<Array<Workspace>>>
   handleMenuAction?: HandleMenuAction
   currentlySelectedWorkspace?: number
+  isMenuDrawerOpen: boolean
+  setIsMenuDrawerOpen?: Dispatch<SetStateAction<boolean>>
 }

@@ -18,3 +18,4 @@ declare global {
 export * from "./MenuDrawer"
 export * from "./Workspace"
 export * from "./Editors"
+export * from "./AppInteractive"

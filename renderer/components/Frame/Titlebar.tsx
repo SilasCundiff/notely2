@@ -18,13 +18,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 import Link from "next/link"
+import { useAppInteractiveContext } from "../../contexts/AppInteractiveContext"
+import { useMenuContext } from "../../contexts/DrawerContext"
 
-const Titlebar = ({
-  setIsNonInteractable,
-  setIsMaximized,
-  isMenuDrawerOpen,
-  setIsMenuDrawerOpen,
-}) => {
+const Titlebar = () => {
+  const { setIsMaximized, setIsNonInteractable } = useAppInteractiveContext()
+  const { isMenuDrawerOpen, setIsMenuDrawerOpen } = useMenuContext()
+
   const handleButtonClick = (id: string) => {
     global.ipcRenderer.send(id)
     if (id === MAXIMIZE) {

@@ -1,13 +1,10 @@
-import { useState } from "react"
-
 import MenuDrawer from "../components/MenuDrawer/Drawer"
 import { useMenuContext } from "../contexts/DrawerContext"
 import WorkspaceStage from "../components/WorkspaceStage/WorkspaceStage"
+import { useAppInteractiveContext } from "../contexts/AppInteractiveContext"
 
 const WorkspacesPage = () => {
-  const [isNonInteractable, setIsNonInteractable] = useState(false) // should be interactive when loaded
-  const [isMaximized, setIsMaximized] = useState(false)
-  const [isMenuDrawerOpen, setIsMenuDrawerOpen] = useState(false)
+  const { isNonInteractable } = useAppInteractiveContext()
 
   const { currentlySelectedWorkspace, workspaceList } = useMenuContext()
 
@@ -19,9 +16,7 @@ const WorkspacesPage = () => {
   return (
     <>
       <div id="main" className="h-full w-full flex">
-        {!isNonInteractable && (
-          <MenuDrawer isMenuDrawerOpen={isMenuDrawerOpen} />
-        )}
+        {!isNonInteractable && <MenuDrawer />}
         <div
           className={`basis-auto w-full p-2 ${
             !isNonInteractable && "bg-slate-900"

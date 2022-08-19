@@ -1,9 +1,11 @@
 import React from "react"
+import { useMenuContext } from "../../contexts/DrawerContext"
 import MenuAddEditorInput from "./NewWorkspaceInput"
 
 import MenuEditorList from "./WorkspaceList"
 
-function MenuDrawer({ isMenuDrawerOpen }) {
+function MenuDrawer() {
+  const {isMenuDrawerOpen} = useMenuContext()
   return (
     <div
       className={`w-full basis-80 bg-sky-800 transition-all flex flex-col ${

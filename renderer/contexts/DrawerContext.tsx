@@ -29,6 +29,7 @@ const getWorkspaceFromList = (
 }
 
 export function MenuProvider({ children }) {
+  const [isMenuDrawerOpen, setIsMenuDrawerOpen] = useState(false)
   const [workspaceList, setWorkspaceList] = useState(initialExampleList)
   const [currentlySelectedWorkspace, setCurrentlySelectedWorkspace] = useState(
     initialExampleList[0].workspaceId
@@ -82,6 +83,8 @@ export function MenuProvider({ children }) {
         setWorkspaceList,
         handleMenuAction,
         currentlySelectedWorkspace,
+        isMenuDrawerOpen,
+        setIsMenuDrawerOpen,
       }}
     >
       {children}
