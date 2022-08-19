@@ -48,7 +48,7 @@
     height: 100%;
     -webkit-app-region: drag;
     display: grid;
-    grid-template-columns: 92px auto 138px;
+    grid-template-columns: 138px auto 138px;
   }
 
   #window-title {
@@ -79,7 +79,7 @@
   #additional-controls {
     grid-column: 1;
     display: grid;
-    grid-template-columns: repeat(2, 46px);
+    grid-template-columns: repeat(3, 46px);
 
     height: 100%;
     -webkit-app-region: no-drag;
@@ -125,14 +125,17 @@
   #restore-button {
     display: none !important;
   }
-  #menu-button:hover {
-  }
+
   #menu-button {
     grid-column: 1;
   }
   #hide-button {
     grid-column: 2;
   }
+  #home-button {
+    grid-column: 3;
+  }
+
   #min-button {
     grid-column: 1;
   }
