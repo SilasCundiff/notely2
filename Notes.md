@@ -20,3 +20,7 @@ Maybe a use of a hash? if the hash of the remote workspace and local are the sam
 
     Load the initial workspace and list of workspaces ->
         once the first workspace is properly loaded, begin fetching the other workspaces in the background
+
+## TODO
+
+    need to add a context for window interactible/hidden/maximixed/etc
