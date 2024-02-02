@@ -1,32 +1,14 @@
-# Electron with Typescript application example
+# A note-taking app with a unique twist
 
-This example show how you can use Next.js inside an Electron application to avoid a lot of configuration, use Next.js router as view and use server-render to speed up the initial render of the application. Both Next.js and Electron layers are written in TypeScript and compiled to JavaScript during the build process.
+This note taking app allows you to use notes as an overlay on top of your screen. Take notes in the editor, then use the keybind or eye button to hide the entire window, leaving only the contents on the editor visible.
 
-| Part       | Source code (Typescript) | Builds (JavaScript) |
-| ---------- | ------------------------ | ------------------- |
-| Next.js    | `/renderer`              | `/renderer`         |
-| Electron   | `/electron-src`          | `/main`             |
-| Production |                          | `/dist`             |
+> Electron with TypeScript, NextJS, and Tailwind
 
-For development it's going to run a HTTP server and let Next.js handle routing. In production it use `next export` to pre-generate HTML static files and use them in your app instead of running an HTTP server.
+Example before and after images:
+![UI Before hiding](./before-hiding.png)
+![UI After hiding on a dark background](./after-hiding.png)
 
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-electron-typescript with-electron-typescript-app
-```
-
-```bash
-yarn create next-app --example with-electron-typescript with-electron-typescript-app
-```
-
-```bash
-pnpm create next-app --example with-electron-typescript with-electron-typescript-app
-```
-
-Available commands:
+Content behind the overlay is fully- with no interference from the editor itself (besides the keybind which is ctrl+i).
 
 ```bash
 "build-renderer": build and transpile Next.js layer
@@ -40,9 +22,3 @@ Available commands:
 ## Notes
 
 You can create the production app using `npm run dist`.
-
-_note regarding types:_
-
-- Electron provides its own type definitions, so you don't need @types/electron installed!
-  source: https://www.npmjs.com/package/@types/electron
-- There were no types available for `electron-next` at the time of creating this example, so until they are available there is a file `electron-next.d.ts` in `electron-src` directory.
